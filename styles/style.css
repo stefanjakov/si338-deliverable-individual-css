@@ -1,11 +1,17 @@
-:root {
-	font-size: 16px;
-}
-
+/* ------------- */
+/* IMPORTANT PHONE OPTIMIZATIONS */
+/* ------------- */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+:root {
+	--brand-background: #BAB7B1;
+	--brand-primary: #36454F;
+	--brand-secondary: #67616E;
+	--brand-accent: #6C7D72;
 }
 
 body {
@@ -13,8 +19,8 @@ body {
 	font: 1rem/1.5 sans-serif;
 }
 
-img,
-video {
+/* making sure that images are well suited and opt for images */
+img {
 	max-width: 100%;
 	height: auto;
 	display: block;
@@ -23,5 +29,64 @@ video {
 main {
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: 0rem 1rem;
+}
+
+/* ------------- */
+/* NAVBAR */
+/* ------------- */
+
+#main-nav {
+	background-color: var(--brand-secondary);
+	/* idk if i wanna do this cuz it messes up with the links */
+	/* position: sticky; */
+	/* top: 0; */
+	/* z-index: 10; */
+	padding: 0.5rem;
+}
+
+#main-nav .nav-container {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#main-nav .nav-link {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: 600;
+	padding: 0.5rem;
+	border-radius: 0.4rem;
+	line-height: 1;
+	/* transitiion for the background color change */
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#main-nav .nav-link:hover,
+#main-nav .nav-link:focus-visible {
+	background-color: var(--brand-accent);
+	outline: 2px solid transparent;
+}
+
+/* ------------- */
+/* HEADERS */
+/* ------------- */
+
+h1,
+h2 {
+	text-align: center;
+}
+
+h1 {
+	color: var(--brand-accent);
+	font-weight: 600;
+}
+
+h2 {
+	background-color: var(--brand-accent);
+	color: white;
+	font-weight: 200;
+	border-radius: 1rem;
+	padding: 0.25rem;
 }
