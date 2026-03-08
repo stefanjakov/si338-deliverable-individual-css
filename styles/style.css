@@ -1,0 +1,27 @@
+:root {
+	font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font: 1rem/1.5 sans-serif;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+main {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 1rem;
+}
