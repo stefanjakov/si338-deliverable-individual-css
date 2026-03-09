@@ -53,7 +53,7 @@ main {
 }
 
 #main-nav .nav-link {
-	color: #FFFFFF;
+	color: white;
 	text-decoration: none;
 	font-weight: 600;
 	padding: 0.5rem;
@@ -87,12 +87,12 @@ main {
 }
 
 #athlete-nav .nav-title {
-	color: #FFFFFF;
+	color: white;
 	font-weight: 600;
 }
 
 #athlete-nav .nav-link {
-	color: #FFFFFF;
+	color: white;
 	text-decoration: none;
 	font-weight: 600;
 	padding: 0.5rem;
@@ -125,13 +125,33 @@ h2 {
 	background-color: var(--brand-accent);
 	color: white;
 	font-weight: 200;
-	border-radius: 1rem;
-	padding: 0.25rem;
+	border-radius: 0;
+	padding: 0.75rem 1rem;
+	font-size: 1.75rem;
+	letter-spacing: 0.02em;
 }
 
 h3 {
 	color: var(--brand-secondary);
 	font-weight: 400;
+}
+
+/* ------------- */
+/* STICKY HEADERS */
+/* ------------- */
+
+:root {
+	--sticky-header-offset: 3.25rem;
+}
+
+section > h2 {
+	position: sticky;
+	top: var(--sticky-header-offset);
+	z-index: 6;
+}
+
+section {
+	scroll-margin-top: calc(var(--sticky-header-offset) + 0.75rem);
 }
 
 /* ------------- */
@@ -319,7 +339,7 @@ h2 label::after {
 /* ------------- */
 
 main p {
-	color: #2f2f2f;
+	color: var(--brand-primary);
 	max-width: 70ch;
 	margin: 0.4rem 0 0.75rem;
 }
@@ -336,7 +356,7 @@ main li {
 }
 
 #team-accomplishments ul {
-	background: #f4f4f4;
+	background: lightgrey;
 	border-left: 4px solid var(--brand-accent);
 	border-radius: 0.5rem;
 	padding: 0.8rem 1rem 0.6rem 1.4rem;
@@ -365,7 +385,7 @@ footer p a {
 
 #site-footer {
 	background-color: var(--brand-secondary);
-	color: #FFFFFF;
+	color: white;
 	padding: 0.75rem 1rem;
 }
 
@@ -376,18 +396,18 @@ footer p a {
 
 #site-footer p {
 	margin: 0.35rem 0;
-	color: #FFFFFF;
+	color: white;
 }
 
 #site-footer a {
-	color: #FFFFFF;
+	color: white;
 	font-weight: 600;
 	text-underline-offset: 2px;
 }
 
 #site-footer a:hover,
 #site-footer a:focus-visible {
-	color: #FFFFFF;
+	color: white;
 	background-color: var(--brand-accent);
 	border-radius: 0.25rem;
 	outline: 2px solid transparent;
