@@ -39,9 +39,9 @@ main {
 #main-nav {
 	background-color: var(--brand-secondary);
 	/* idk if i wanna do this cuz it messes up with the links */
-	/* position: sticky; */
-	/* top: 0; */
-	/* z-index: 10; */
+	position: sticky;
+	top: 0;
+	z-index: 10;
 	padding: 0.5rem;
 }
 
@@ -89,4 +89,58 @@ h2 {
 	font-weight: 200;
 	border-radius: 1rem;
 	padding: 0.25rem;
+}
+
+h3 {
+	color: var(--brand-secondary);
+	font-weight: 400;
+}
+
+/* ------------- */
+/* TABLES */
+/* ------------- */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table thead {
+	display: none;
+}
+
+tr {
+	display: block;
+	background-color: var(--brand-secondary);
+	color: white;
+	border-radius: 12px;
+	padding: 16px;
+	margin-bottom: 16px;
+}
+
+td {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+	border-bottom: 1px solid var(--brand-primary);
+}
+
+td:last-child {
+	border-bottom: none;
+}
+
+/* SHARED MEETS STUFF */
+.shared-meets {
+	max-height: 50rem;
+	overflow-y: scroll;
+}
+
+.shared-meets td:nth-child(2)::before {
+	content: "Athlete A's Place";
+	font-weight: bold;
+}
+
+.shared-meets td:nth-child(3)::before {
+	content: "Athlete B's Place";
+	font-weight: bold;
 }
