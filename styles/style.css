@@ -125,6 +125,15 @@ td {
 	border-bottom: 1px solid var(--brand-primary);
 }
 
+tr:nth-child(even) {
+	background-color: var(--brand-primary);
+}
+
+tr:nth-child(even) td {
+	background-color: var(--brand-primary);
+	border-bottom: 1px solid var(--brand-secondary);
+}
+
 td:last-child {
 	border-bottom: none;
 }
@@ -143,4 +152,76 @@ td:last-child {
 .shared-meets td:nth-child(3)::before {
 	content: "Athlete B's Place";
 	font-weight: bold;
+}
+
+/* EVENTS RESULTS STUFF */
+
+.events-results {
+	max-height: 50rem;
+	overflow-y: scroll;
+}
+
+.events-results td:nth-child(2)::before {
+	content: "Date";
+	font-weight: bold;
+}
+
+.events-results td:nth-child(3)::before {
+	content: "Place";
+	font-weight: bold;
+}
+
+.events-results td:nth-child(4) {
+	display: flex;
+	justify-content: center;
+}
+
+.events-results td:nth-child(4) a {
+	color: white;
+}
+
+/* INDIVIDUAL RACE STUFF */
+
+.table-results {
+	max-height: 50rem;
+	overflow-y: scroll;
+}
+
+.table-results td:nth-child(2)::before {
+	content: "Date";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(3)::before {
+	content: "Location";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(4)::before {
+	content: "Distance";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(5)::before {
+	content: "Time";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(6)::before {
+	content: "Place";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(7)::before {
+	content: "Grade";
+	font-weight: bold;
+}
+
+.table-results td:nth-child(8) {
+	display: flex;
+	justify-content: center;
+}
+
+.table-results td:nth-child(8) a {
+	color: white;
 }
