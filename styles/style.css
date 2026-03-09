@@ -69,6 +69,44 @@ main {
 	outline: 2px solid transparent;
 }
 
+#athlete-nav {
+	background-color: var(--brand-secondary);
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	padding: 0.5rem 1rem;
+}
+
+#athlete-nav .nav-container {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#athlete-nav .nav-title {
+	color: #FFFFFF;
+	font-weight: 600;
+}
+
+#athlete-nav .nav-link {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: 600;
+	padding: 0.5rem;
+	border-radius: 0.4rem;
+	line-height: 1;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#athlete-nav .nav-link:hover,
+#athlete-nav .nav-link:focus-visible {
+	background-color: var(--brand-accent);
+	outline: 2px solid transparent;
+}
+
 /* ------------- */
 /* HEADERS */
 /* ------------- */
@@ -94,6 +132,21 @@ h2 {
 h3 {
 	color: var(--brand-secondary);
 	font-weight: 400;
+}
+
+/* ------------- */
+/* ATHLETE HEADER */
+/* ------------- */
+
+#athlete-header {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+#athlete-header .athlete-info {
+	margin: 1rem 0;
+	padding: 1rem;
 }
 
 /* ------------- */
@@ -224,4 +277,118 @@ td:last-child {
 
 .table-results td:nth-child(8) a {
 	color: white;
+}
+
+/* ------------- */
+/* COLLAPSING */
+/* ------------- */
+
+.collapse-toggle {
+	display: none;
+}
+
+h2 label {
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.5rem;
+}
+
+.collapsible-content {
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+}
+
+.collapse-toggle:checked+h2+.collapsible-content {
+	max-height: 0;
+}
+
+h2 label::after {
+	content: "▼";
+	margin-left: 0.5rem;
+	transition: transform 0.3s;
+}
+
+.collapse-toggle:checked+h2 label::after {
+	transform: rotate(-180deg);
+}
+
+/* ------------- */
+/* PARAGRAPH STUFF */
+/* ------------- */
+
+main p {
+	color: #2f2f2f;
+	max-width: 70ch;
+	margin: 0.4rem 0 0.75rem;
+}
+
+main ul,
+main ol {
+	margin: 0.5rem 0 1rem;
+	padding-left: 1.3rem;
+}
+
+main li {
+	margin-bottom: 0.45rem;
+	line-height: 1.5;
+}
+
+#team-accomplishments ul {
+	background: #f4f4f4;
+	border-left: 4px solid var(--brand-accent);
+	border-radius: 0.5rem;
+	padding: 0.8rem 1rem 0.6rem 1.4rem;
+}
+
+main form legend {
+	color: var(--brand-primary);
+	font-weight: 600;
+	margin-bottom: 0.35rem;
+}
+
+main form label {
+	color: var(--brand-primary);
+	font-weight: 600;
+}
+
+main p a,
+footer p a {
+	color: var(--brand-primary);
+	text-underline-offset: 2px;
+}
+
+/* ------------- */
+/* FOOTER */
+/* ------------- */
+
+#site-footer {
+	background-color: var(--brand-secondary);
+	color: #FFFFFF;
+	padding: 0.75rem 1rem;
+}
+
+#site-footer .footer-content {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+#site-footer p {
+	margin: 0.35rem 0;
+	color: #FFFFFF;
+}
+
+#site-footer a {
+	color: #FFFFFF;
+	font-weight: 600;
+	text-underline-offset: 2px;
+}
+
+#site-footer a:hover,
+#site-footer a:focus-visible {
+	color: #FFFFFF;
+	background-color: var(--brand-accent);
+	border-radius: 0.25rem;
+	outline: 2px solid transparent;
 }

@@ -45,8 +45,12 @@
   <main>
 
     <section id="athlete-results">
-      <h2>Race Results</h2>
+			<input type="checkbox" id="toggle-results" class="collapse-toggle">
+			<h2>
+				<label for="toggle-results">Race Results</label>
+			</h2>
 
+			<div class="collapsible-content">
       <div class="results-filters">
         <form>
           <fieldset>
@@ -105,11 +109,17 @@
         </table>
 					</div>
       </article>
+				</div>
     </section>
 
     <section id="performance-graph">
-      <h2>Performance Progression</h2>
 
+			<input type="checkbox" id="toggle-performance" class="collapse-toggle">
+			<h2>
+				<label for="toggle-performance">Performance Progression</label>
+			</h2>
+
+			<div class="collapsible-content">
       <div>
         <p id="graph-description">
           This graph visualizes the athlete’s race times across meets,
@@ -126,8 +136,12 @@
     </section>
 
     <section id="athlete-gallery">
-      <h2>Gallery</h2>
+			<input type="checkbox" id="toggle-gallery" class="collapse-toggle">
+			<h2>
+				<label for="toggle-gallery">Gallery</label>
+			</h2>
 
+				<div class="collapsible-content">
       <article class="gallery-grid">
         <h3>Athlete Gallery Images</h3>
         <img src="../../images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Race gallery photo: 2023Earlybirdopen" loading="lazy" />
@@ -144,6 +158,7 @@
 <img src="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" />
 <img src="../../images/athletes/21615274/2025_SEC-HSChampionship.jpg" alt="Race gallery photo: 2025 Sec Hschampionship" loading="lazy" />
       </article>
+				</div>
     </section>
 
   </main>
