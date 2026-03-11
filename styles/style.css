@@ -15,6 +15,13 @@
 	--brand-primary: #36454F;
 	--brand-secondary: #67616E;
 	--brand-accent: #6C7D72;
+	--brand-third-color: lightgrey;
+	--brand-third-color-dark: #714c43;
+	--card-surface: #1e453e;
+	--dark-mode-color: #FAC898;
+	--dark-mode-background: black;
+	--dark-mode-surface: var(--card-surface);
+	--dark-mode-text: white;
 
 	/* font pairing + responsive type scale */
 	--font-body: "Manrope", Roboto, sans-serif;
@@ -35,6 +42,22 @@
 body {
 	margin: 0;
 	font: var(--font-size-100)/1.6 var(--font-body);
+	background-color: var(--brand-background);
+	color: var(--brand-primary);
+}
+
+:root:has(#dark-mode-toggle:checked) {
+	--brand-background: var(--dark-mode-background);
+	--brand-primary: var(--dark-mode-text);
+	--brand-secondary: var(--dark-mode-surface);
+	--brand-accent: var(--dark-mode-color);
+	--brand-third-color: var(--brand-third-color-dark);
+}
+
+:root:has(#dark-mode-toggle:checked) table,
+:root:has(#dark-mode-toggle:checked) td,
+:root:has(#dark-mode-toggle:checked) th {
+	color: var(--dark-mode-text);
 }
 
 /* making sure that images are well suited and opt for images */
@@ -146,6 +169,51 @@ h1 {
 	line-height: 1.15;
 }
 
+.theme-toggle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+	margin: 0.75rem;
+	color: var(--brand-primary);
+}
+
+.theme-toggle input {
+	position: absolute;
+	opacity: 0;
+}
+
+.theme-toggle-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 1.2rem;
+	cursor: pointer;
+	padding: 0.5rem 1.6rem;
+	border: 2px solid var(--brand-primary);
+	border-radius: 25px;
+	background-color: var(--brand-background);
+	color: var(--brand-primary);
+}
+
+.theme-toggle-label::before {
+	content: "";
+	width: 1.1rem;
+	height: 1.1rem;
+	border-radius: 50%;
+	background-color: var(--brand-primary);
+	transition: transform 0.2s ease;
+}
+
+#dark-mode-toggle:checked+.theme-toggle-label {
+	border-color: var(--brand-accent);
+	color: var(--brand-accent);
+}
+
+#dark-mode-toggle:checked+.theme-toggle-label::before {
+	transform: translateX(1rem);
+	background-color: var(--brand-accent);
+}
+
 h2 {
 	background-color: var(--brand-accent);
 	color: white;
@@ -162,7 +230,7 @@ h2 {
 }
 
 h3 {
-	color: var(--brand-secondary);
+	color: var(--brand-primary);
 	font-family: var(--font-heading);
 	font-size: var(--font-size-300);
 	font-weight: 400;
@@ -267,12 +335,14 @@ td {
 }
 
 tr:nth-child(even) {
-	background-color: var(--brand-primary);
+	background-color: var(--brand-third-color);
+	color: black;
 }
 
 tr:nth-child(even) td {
-	background-color: var(--brand-primary);
+	background-color: var(--brand-third-color);
 	border-bottom: 1px solid var(--brand-secondary);
+	color: black;
 }
 
 td:last-child {
@@ -426,7 +496,7 @@ main li {
 }
 
 #team-accomplishments ul {
-	background: lightgrey;
+	background: var(--brand-third-color);
 	border-left: 4px solid var(--brand-accent);
 	border-radius: 0.5rem;
 	padding: 0.8rem 1rem 0.6rem 1.4rem;
@@ -498,13 +568,21 @@ footer p a {
 /* ATHLETE CARDS */
 /* ------------- */
 
+.athlete-card {
+	display: flex;
+	justify-content: center;
+	background-color: var(--brand-background);
+	border-radius: 25px;
+}
+
 .card-inner {
 	display: inline-block;
-	background-color: lightgrey;
+	color: var(--brand-background);
 	border-radius: 1rem;
 	padding: 1rem 0.5rem;
 	justify-content: space-evenly;
 	justify-items: center;
+	background-color: var(--brand-third-color);
 }
 
 .card-inner img {
@@ -519,7 +597,8 @@ footer p a {
 
 .comparison-card {
 	display: inline-block;
-	background-color: lightgrey;
+	background-color: transparent;
+	color: var(--brand-primary);
 	border-radius: 1rem;
 	padding: 1rem 0.5rem;
 	justify-content: space-evenly;
