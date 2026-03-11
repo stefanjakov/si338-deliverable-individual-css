@@ -268,7 +268,7 @@ section:target {
 }
 
 section:target>h2 {
-	background-color: var(--brand-primary);
+	background-color: var(--brand-secondary);
 	color: white;
 }
 
