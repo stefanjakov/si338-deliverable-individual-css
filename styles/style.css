@@ -367,6 +367,14 @@ td:last-child {
 	overflow-y: scroll;
 }
 
+.shared-meets:focus-visible,
+.events-results:focus-visible,
+.table-results:focus-visible,
+.gallery:focus-visible {
+	outline: 3px solid var(--brand-accent);
+	outline-offset: 4px;
+}
+
 .shared-meets td:nth-child(2)::before {
 	content: "Athlete A's Place";
 	font-weight: bold;
@@ -400,7 +408,13 @@ td:last-child {
 }
 
 .events-results td:nth-child(4) a {
-	color: white;
+	color: inherit;
+	font-weight: 600;
+}
+
+tr:nth-child(even) .events-results td:nth-child(4) a,
+.events-results tr:nth-child(even) td:nth-child(4) a {
+	color: black;
 }
 
 /* INDIVIDUAL RACE STUFF */
@@ -446,7 +460,13 @@ td:last-child {
 }
 
 .table-results td:nth-child(8) a {
-	color: white;
+	color: inherit;
+	font-weight: 600;
+}
+
+tr:nth-child(even) .table-results td:nth-child(8) a,
+.table-results tr:nth-child(even) td:nth-child(8) a {
+	color: black;
 }
 
 /* ------------- */
