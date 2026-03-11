@@ -597,6 +597,11 @@ footer p a {
 	background-color: var(--brand-third-color);
 }
 
+
+.card-inner a {
+	color: var(--brand-primary);
+}
+
 .card-inner img {
 	width: clamp(120px, 30vw, 200px);
 	aspect-ratio: 1 / 1;
