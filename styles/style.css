@@ -607,11 +607,22 @@ footer p a {
 /* ATHLETE CARDS */
 /* ------------- */
 
+#athlete-roster {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+#athlete-roster > h3 {
+	margin: 0;
+}
+
 .athlete-card {
 	display: flex;
 	justify-content: center;
 	background-color: var(--brand-background);
 	border-radius: 25px;
+	width: 100%;
 }
 
 .card-inner {
@@ -727,6 +738,17 @@ footer p a {
 /* ------------- */
 
 @media (min-width: 900px) {
+	#athlete-roster {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+		align-items: stretch;
+	}
+
+	#athlete-roster > h3 {
+		grid-column: 1 / -1;
+	}
+
 	main,
 	#main-nav .nav-container,
 	#athlete-nav .nav-container,
