@@ -4,7 +4,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 ATHLETE_ID = "21840731"
-ATHLETE_NAME = "Mark Henderson"
+ATHLETE_NAME = "Ryan Reynolds"
 ATHLETE_URL = f"https://www.athletic.net/athlete/{ATHLETE_ID}/cross-country/"
 ATHLETE_PROFILE_PIC = f"../../images/athletes/{ATHLETE_ID}/profile.jpg"
 PERFORMANCE_GRAPH = f"../../images/athletes/{ATHLETE_ID}/performance.png"
