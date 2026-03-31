@@ -157,8 +157,8 @@ def build_player_comparison_html(athletes: dict) -> str:
     shared_html = ""
     if shared_rows:
         shared_html = f"""
-        <div class="shared-meets">
-          <h3>Shared Meets</h3>
+        <h3>Shared Meets</h3>
+        <div class="shared-meets" tabindex="0" role="region" aria-label="Shared meets comparison table">
           <table>
             <thead>
               <tr>
@@ -276,7 +276,6 @@ def build_athlete_card(athlete_id: str) -> str:
             class="athlete-photo"
             loading="lazy"
           />
-          <h3 class="athlete-name">{name}</h3>
         </div>
 
         <div class="card-back">
@@ -481,7 +480,14 @@ def build_team_gallery_images(max_per_athlete=2) -> str:
             src = f"./images/athletes/{athlete_id}/{img_path.name}"
 
             image_tags.append(
-                f'<img src="{src}" alt="Team event photo" loading="lazy" />'
+                "<div class=\"gallery-card\">"
+                f"<a href=\"{src}\" target=\"_blank\" "
+                "data-lightbox=\"team-gallery\" "
+                "data-title=\"Team event photo\" "
+                "data-alt=\"Team event photo\">"
+                f"<img src=\"{src}\" alt=\"Team event photo\" loading=\"lazy\" />"
+                "</a>"
+                "</div>"
             )
 
             count += 1

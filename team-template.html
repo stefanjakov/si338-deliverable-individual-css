@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ann Arbor Skyline</title>
-  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="dist/css/lightbox.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- <link rel="stylesheet" href="styles/reset.css"> -->
 </head>
 
 <body>
@@ -21,119 +23,142 @@
   </nav>
 
   <header>
+    <div class="theme-toggle">
+      <input type="checkbox" id="dark-mode-toggle" />
+      <label for="dark-mode-toggle" class="theme-toggle-label">Dark mode</label>
+    </div>
     <h1>Ann Arbor Skyline</h1>
   </header>
 
   <main>
 
     <section id="team-roster">
-      <h2>The Athletes</h2>
+      <input type="checkbox" id="toggle-roster" class="collapse-toggle">
+      <h2><label for="toggle-roster">The Athletes</label></h2>
 
-      <div id="sort-by-choices">
-        <form>
-          <fieldset>
-            <legend>Sort Athletes</legend>
+      <div class="collapsible-content">
+        <div id="sort-by-choices">
+          <form>
+            <fieldset>
+              <legend>Sort Athletes</legend>
 
-            <p id="sort-instructions">
-              Choose a field to sort the athlete roster.
-            </p>
+              <p id="sort-instructions">
+                Choose a field to sort the athlete roster.
+              </p>
 
-            <label for="sort-by">Sort by:</label>
-            <select id="sort-by" name="sort-by" aria-describedby="sort-instructions">
-              <option value="name">Name</option>
-              <option value="grade">Grade</option>
-              <option value="season-record">Season Record (SR)</option>
-              <option value="personal-record">Personal Record (PR)</option>
-            </select>
-          </fieldset>
-        </form>
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-by" name="sort-by" aria-describedby="sort-instructions">
+                <option value="name">Name</option>
+                <option value="grade">Grade</option>
+                <option value="season-record">Season Record (SR)</option>
+                <option value="personal-record">Personal Record (PR)</option>
+              </select>
+            </fieldset>
+          </form>
+        </div>
+
+        <article id="athlete-roster">
+          <h3>Athlete Roster</h3>
+          {{ATHLETE_CARDS}}
+        </article>
       </div>
-
-      <article id="athlete-roster">
-        <h3>Athlete Roster</h3>
-        {{ATHLETE_CARDS}}
-      </article>
     </section>
 
     <section id="team-accomplishments">
-      <h2>Team Accomplishments</h2>
+      <input type="checkbox" id="toggle-accomplishments" class="collapse-toggle">
+      <h2><label for="toggle-accomplishments">Team Accomplishments</label></h2>
 
-      <article>
-        <h3>Accomplishment Highlights</h3>
-        <ul>
-          {{TEAM_ACCOMPLISHMENTS}}
-        </ul>
-      </article>
+      <div class="collapsible-content">
+        <article>
+          <h3>Accomplishment Highlights</h3>
+          <ul>
+            {{TEAM_ACCOMPLISHMENTS}}
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section id="player-comparison">
-      <h2>Compare Athletes</h2>
+      <input type="checkbox" id="toggle-comparison" class="collapse-toggle">
+      <h2><label for="toggle-comparison">Compare Athletes</label></h2>
 
-      <div class="comparison-controls">
-        <form>
-          <fieldset>
-            <legend>Select Athletes to Compare</legend>
+      <div class="collapsible-content">
+        <div class="comparison-controls">
+          <form>
+            <fieldset>
+              <legend>Select Athletes to Compare</legend>
 
-            <p id="comparison-instructions">
-              Select two athletes from the dropdowns to compare their season
-              statistics and shared meets
-            </p>
+              <p id="comparison-instructions">
+                Select two athletes from the dropdowns to compare their season
+                statistics and shared meets
+              </p>
 
-            <div class="comparison-select">
-              <label for="athlete-a">Athlete A:</label>
-              <select id="athlete-a" name="athlete-a" aria-describedby="comparison-instructions">
-                {{ATHLETE_OPTIONS}}
-              </select>
-            </div>
+              <div class="comparison-select">
+                <label for="athlete-a">Athlete A:</label>
+                <select id="athlete-a" name="athlete-a" aria-describedby="comparison-instructions">
+                  {{ATHLETE_OPTIONS}}
+                </select>
+              </div>
 
-            <div class="comparison-select">
-              <label for="athlete-b">Athlete B:</label>
-              <select id="athlete-b" name="athlete-b" aria-describedby="comparison-instructions">
-                {{ATHLETE_OPTIONS}}
-              </select>
-            </div>
+              <div class="comparison-select">
+                <label for="athlete-b">Athlete B:</label>
+                <select id="athlete-b" name="athlete-b" aria-describedby="comparison-instructions">
+                  {{ATHLETE_OPTIONS}}
+                </select>
+              </div>
 
-            <button type="button" id="compare-button">
-              Compare
-            </button>
-          </fieldset>
-        </form>
+              <button type="button" id="compare-button">
+                Compare
+              </button>
+            </fieldset>
+          </form>
+        </div>
+
+        <article id="comparison-results">
+          <h3>Comparison Results</h3>
+          {{PLAYER_COMPARISON}}
+        </article>
       </div>
-
-      <article id="comparison-results">
-        <h3>Comparison Results</h3>
-        {{PLAYER_COMPARISON}}
-      </article>
     </section>
 
     <section id="team-events">
-      <h2>Team Events</h2>
+      <input type="checkbox" id="toggle-events" class="collapse-toggle">
+      <h2><label for="toggle-events">Team Events</label></h2>
 
-      <article>
-        <h3>Event Results</h3>
-        <table id="events-table">
-          <thead>
-            <tr>
-              <th>Race</th>
-              <th>Date</th>
-              <th>Placement</th>
-              <th>Results</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{TEAM_EVENTS_ROWS}}
-          </tbody>
-        </table>
-      </article>
+      <div class="collapsible-content">
+        <article>
+          <h3>Event Results</h3>
+          <div class="events-results" tabindex="0" role="region" aria-label="Team event results table">
+            <table id="events-table">
+              <thead>
+                <tr>
+                  <th>Race</th>
+                  <th>Date</th>
+                  <th>Placement</th>
+                  <th>Results</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{TEAM_EVENTS_ROWS}}
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="team-gallery">
-      <h2>Team Gallery</h2>
+      <input type="checkbox" id="toggle-gallery" class="collapse-toggle">
+      <h2><label for="toggle-gallery">Team Gallery</label></h2>
 
-      <article class="gallery-grid">
-        <h3>Gallery Images</h3>
-        {{TEAM_GALLERY_IMAGES}}
-      </article>
+      <div class="collapsible-content">
+        <article class="gallery-grid">
+          <h3>Gallery Images</h3>
+          <div class="gallery" tabindex="0" role="region" aria-label="Team gallery">
+            {{TEAM_GALLERY_IMAGES}}
+          </div>
+        </article>
+      </div>
     </section>
 
   </main>
@@ -150,10 +175,12 @@
 
       <p>
         Generated automatically for SI 338 &middot;
-        <span class="footer-year">2024</span>
+        <span class="footer-year">2026</span>
       </p>
     </div>
   </footer>
+
+  <script src="dist/js/lightbox-plus-jquery.js"></script>
 
 </body>
 

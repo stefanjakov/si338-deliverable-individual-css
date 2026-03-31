@@ -2,30 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{NAME}}</title>
-  <link rel="stylesheet" href="../../styles/reset.css">
+  <link rel="stylesheet" href="../../styles/style.css">
+  <!-- <link rel="stylesheet" href="../../styles/reset.css"> -->
 </head>
 
 <body>
 
   <nav id="athlete-nav">
     <div class="nav-container">
-      <span class="nav-title">Ann Arbor Skyline Athletes</span>
-      <a href="https://stefanjakov.github.io/si338-client-project-deliverable/" class="nav-link">
-        Team page
-      </a>
+      <a href="#athlete-results" class="nav-link">Race Results</a>
+      <a href="#performance-graph" class="nav-link">Performance Progression</a>
+      <a href="#athlete-gallery" class="nav-link">Gallery</a>
+      <a href="../../index.html" class="nav-link">Team page</a>
     </div>
   </nav>
 
   <header id="athlete-header">
     <article class="athlete-info">
+      <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="theme-toggle-label">Dark mode</label>
+      </div>
       <h2>Athlete Information</h2>
 
       <h1>{{NAME}}</h1>
 
-      <img src="{{ATHLETE_PROFILE_PIC}}" alt="Athlete profile picture" class="athlete-photo" />
+      <img src="{{ATHLETE_PROFILE_PIC}}" alt="Athlete profile picture" class="athlete-photo">
 
       <p class="athlete-school">Ann Arbor Skyline</p>
       <p class="athlete-grade">Current Grade: {{GRADE}}</p>
@@ -44,92 +49,74 @@
   <main>
 
     <section id="athlete-results">
-      <h2>Race Results</h2>
+      <input type="checkbox" id="toggle-results" class="collapse-toggle">
+      <h2>
+        <label for="toggle-results">Race Results</label>
+      </h2>
 
-      <div class="results-filters">
-        <form>
-          <fieldset>
-            <legend>Filter Race Results</legend>
+      <div class="collapsible-content">
+        <article>
+          <h3>Race Results Table</h3>
 
-            <p id="filter-instructions">
-              Use the fields below to filter race results by location or date
-            </p>
-
-            <div class="filter-group">
-              <label for="filter-location">Location:</label>
-              <input type="text" id="filter-location" name="filter-location" placeholder="Enter location"
-                aria-describedby="filter-instructions" />
-            </div>
-
-            <div class="filter-group">
-              <label for="filter-date">Date:</label>
-              <input type="date" id="filter-date" name="filter-date" aria-describedby="filter-instructions" />
-            </div>
-          </fieldset>
-        </form>
+          <div class="table-results" tabindex="0" role="region" aria-label="Athlete race results table">
+            <table id="results-table">
+              <thead>
+                <tr>
+                  <th>Race Name</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                  <th>Distance</th>
+                  <th>Time</th>
+                  <th>Place</th>
+                  <th>Grade</th>
+                  <th>Results</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </article>
       </div>
-
-      <article>
-        <h3>Race Results Table</h3>
-
-        <table id="results-table">
-          <thead>
-            <tr>
-              <th>Race Name</th>
-              <th>Date</th>
-              <th>Location</th>
-              <th>Distance</th>
-              <th>Time</th>
-              <th>Place</th>
-              <th>Grade</th>
-              <th>Results</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Race Name</td>
-              <td>Date</td>
-              <td>Location</td>
-              <td>Distance</td>
-              <td>Time</td>
-              <td>Place</td>
-              <td>Grade</td>
-              <td>
-                <a href="https://www.athletic.net" target="_blank">
-                  View Results
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
     </section>
 
     <section id="performance-graph">
-      <h2>Performance Progression</h2>
+      <input type="checkbox" id="toggle-performance" class="collapse-toggle">
+      <h2>
+        <label for="toggle-performance">Performance Progression</label>
+      </h2>
 
-      <div>
-        <p id="graph-description">
-          This graph visualizes the athlete’s race times across meets,
-          color-coded by grade.
-        </p>
+      <div class="collapsible-content">
+        <div>
+          <p id="graph-description">
+            This graph visualizes the athlete’s race times across meets,
+            color-coded by grade.
+          </p>
+        </div>
+
+        <article>
+          <h3>Performance Graph</h3>
+
+          <img src="{{PERFORMANCE_GRAPH}}" alt="Athlete performance progression graph"
+            aria-describedby="graph-description" style="max-width: 100%; height: auto;">
+        </article>
       </div>
-
-      <article>
-        <h3>Performance Graph</h3>
-
-        <img src="{{PERFORMANCE_GRAPH}}" alt="Athlete performance progression graph"
-          aria-describedby="graph-description" style="max-width: 100%; height: auto;" />
-      </article>
     </section>
 
     <section id="athlete-gallery">
-      <h2>Gallery</h2>
+      <input type="checkbox" id="toggle-gallery" class="collapse-toggle">
+      <h2>
+        <label for="toggle-gallery">Gallery</label>
+      </h2>
 
-      <article class="gallery-grid">
-        <h3>Athlete Gallery Images</h3>
-        {{ATHLETE_GALLERY_IMAGES}}
-      </article>
+      <div class="collapsible-content">
+        <article class="gallery-grid">
+          <h3>Athlete Gallery Images</h3>
+          <div class="gallery" tabindex="0" role="region" aria-label="Athlete gallery">
+            {{ATHLETE_GALLERY_IMAGES}}
+          </div>
+        </article>
+      </div>
     </section>
 
   </main>
@@ -146,7 +133,7 @@
 
       <p>
         Generated automatically for SI 338 &middot;
-        <span class="footer-year">2024</span>
+        <span class="footer-year">2026</span>
       </p>
     </div>
   </footer>
