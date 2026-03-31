@@ -285,6 +285,16 @@ section:target>h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s;
+    animation-iteration-count: 1;
+    transition-duration: 0s;
+    scroll-behavior: auto;
+  }
+
   section:target {
     animation: none;
   }
