@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garrett Comer</title>
+  <link rel="stylesheet" href="../../dist/css/lightbox.css">
   <link rel="stylesheet" href="../../styles/style.css">
   <!-- <link rel="stylesheet" href="../../styles/reset.css"> -->
 </head>
@@ -55,29 +56,6 @@
       </h2>
 
       <div class="collapsible-content">
-        <div class="results-filters">
-          <form>
-            <fieldset>
-              <legend>Filter Race Results</legend>
-
-              <p id="filter-instructions">
-                Use the fields below to filter race results by location or date
-              </p>
-
-              <div class="filter-group">
-                <label for="filter-location">Location:</label>
-                <input type="text" id="filter-location" name="filter-location" placeholder="Enter location"
-                  aria-describedby="filter-instructions">
-              </div>
-
-              <div class="filter-group">
-                <label for="filter-date">Date:</label>
-                <input type="date" id="filter-date" name="filter-date" aria-describedby="filter-instructions">
-              </div>
-            </fieldset>
-          </form>
-        </div>
-
         <article>
           <h3>Race Results Table</h3>
 
@@ -96,20 +74,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Race Name</td>
-                  <td>Date</td>
-                  <td>Location</td>
-                  <td>Distance</td>
-                  <td>Time</td>
-                  <td>Place</td>
-                  <td>Grade</td>
-                  <td>
-                    <a href="https://www.athletic.net" target="_blank">
-                      View Results
-                    </a>
-                  </td>
-                </tr>
               <tr><td>Lamplighter Invitational</td><td>Aug 15 2025</td><td>N/A</td><td>5K</td><td>17:22.3</td><td>35</td><td>11</td><td><a href="https://www.athletic.net/CrossCountry/meet/247194/results/1007644" target="_blank">View Results</a></td></tr>
 <tr><td>2nd Ann Arbor City Preview presented by AARC</td><td>Aug 27 2025</td><td>N/A</td><td>5K</td><td>17:40.1</td><td>9</td><td>11</td><td><a href="https://www.athletic.net/CrossCountry/meet/253860/results/1013715" target="_blank">View Results</a></td></tr>
 <tr><td>37th Early Bird Open (HS Open 5K)</td><td>Aug 29 2024</td><td>N/A</td><td>5K</td><td>21:04.2</td><td>160</td><td>10</td><td><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367" target="_blank">View Results</a></td></tr>
@@ -161,21 +125,24 @@
 
       <div class="collapsible-content">
         <article class="gallery-grid">
-          <h3>Athlete Gallery Images</h3>
+          <div class="gallery-header">
+            <h3>Athlete Gallery Images</h3>
+            <p class="gallery-hint">Scroll →</p>
+          </div>
           <div class="gallery" tabindex="0" role="region" aria-label="Athlete gallery">
-            <div class="gallery-card"><img src="../../images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Race gallery photo: 2023Earlybirdopen" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2023PROM.jpg" alt="Race gallery photo: 2023Prom" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2023SECHSChampionship.jpg" alt="Race gallery photo: 2023Sechschampionship" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2024EarlyBirdOpen.jpg" alt="Race gallery photo: 2024Earlybirdopen" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/202557thHolly-Duane.jpg" alt="Race gallery photo: 202557Thholly Duane" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025AARC.jpg" alt="Race gallery photo: 2025Aarc" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Race gallery photo: 2025Dewittxcinvitational" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025Lamplighter.jpg" alt="Race gallery photo: 2025Lamplighter" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025PortageInvitational.jpg" alt="Race gallery photo: 2025Portageinvitational" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Race gallery photo: 2025Sec Hsjamboree1" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025SEC_HSJamboree2.jpg" alt="Race gallery photo: 2025Sec Hsjamboree2" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" /></div>
-<div class="gallery-card"><img src="../../images/athletes/21615274/2025_SEC-HSChampionship.jpg" alt="Race gallery photo: 2025 Sec Hschampionship" loading="lazy" /></div>
+            <div class="gallery-card"><a href="../../images/athletes/21615274/2023EarlyBirdOpen.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2023Earlybirdopen" data-alt="Race gallery photo: 2023Earlybirdopen"><img src="../../images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Race gallery photo: 2023Earlybirdopen" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2023PROM.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2023Prom" data-alt="Race gallery photo: 2023Prom"><img src="../../images/athletes/21615274/2023PROM.jpg" alt="Race gallery photo: 2023Prom" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2023SECHSChampionship.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2023Sechschampionship" data-alt="Race gallery photo: 2023Sechschampionship"><img src="../../images/athletes/21615274/2023SECHSChampionship.jpg" alt="Race gallery photo: 2023Sechschampionship" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2024EarlyBirdOpen.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2024Earlybirdopen" data-alt="Race gallery photo: 2024Earlybirdopen"><img src="../../images/athletes/21615274/2024EarlyBirdOpen.jpg" alt="Race gallery photo: 2024Earlybirdopen" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/202557thHolly-Duane.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 202557Thholly Duane" data-alt="Race gallery photo: 202557Thholly Duane"><img src="../../images/athletes/21615274/202557thHolly-Duane.jpg" alt="Race gallery photo: 202557Thholly Duane" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025AARC.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Aarc" data-alt="Race gallery photo: 2025Aarc"><img src="../../images/athletes/21615274/2025AARC.jpg" alt="Race gallery photo: 2025Aarc" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025DeWittXCInvitational.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Dewittxcinvitational" data-alt="Race gallery photo: 2025Dewittxcinvitational"><img src="../../images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Race gallery photo: 2025Dewittxcinvitational" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025Lamplighter.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Lamplighter" data-alt="Race gallery photo: 2025Lamplighter"><img src="../../images/athletes/21615274/2025Lamplighter.jpg" alt="Race gallery photo: 2025Lamplighter" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025PortageInvitational.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Portageinvitational" data-alt="Race gallery photo: 2025Portageinvitational"><img src="../../images/athletes/21615274/2025PortageInvitational.jpg" alt="Race gallery photo: 2025Portageinvitational" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025SEC_HSJamboree1.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Sec Hsjamboree1" data-alt="Race gallery photo: 2025Sec Hsjamboree1"><img src="../../images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Race gallery photo: 2025Sec Hsjamboree1" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025SEC_HSJamboree2.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025Sec Hsjamboree2" data-alt="Race gallery photo: 2025Sec Hsjamboree2"><img src="../../images/athletes/21615274/2025SEC_HSJamboree2.jpg" alt="Race gallery photo: 2025Sec Hsjamboree2" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025 20Thriverratopen" data-alt="Race gallery photo: 2025 20Thriverratopen"><img src="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" /></a></div>
+<div class="gallery-card"><a href="../../images/athletes/21615274/2025_SEC-HSChampionship.jpg" target="_blank" data-lightbox="athlete-gallery" data-title="Race gallery photo: 2025 Sec Hschampionship" data-alt="Race gallery photo: 2025 Sec Hschampionship"><img src="../../images/athletes/21615274/2025_SEC-HSChampionship.jpg" alt="Race gallery photo: 2025 Sec Hschampionship" loading="lazy" /></a></div>
           </div>
         </article>
       </div>
@@ -199,6 +166,8 @@
       </p>
     </div>
   </footer>
+
+  <script src="../../dist/js/lightbox-plus-jquery.js"></script>
 
 </body>
 

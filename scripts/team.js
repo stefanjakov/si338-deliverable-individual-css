@@ -2,6 +2,7 @@ let athletesData = null;
 
 function timeToSeconds(value) {
   if (!value || value === "N/A") {
+    // just return biggest num
     return Number.POSITIVE_INFINITY;
   }
 
@@ -158,11 +159,6 @@ function updateComparison() {
 
   const athleteA = athletesData[selectA.value];
   const athleteB = athletesData[selectB.value];
-
-  if (!athleteA || !athleteB) {
-    output.innerHTML = "<p>Not enough athletes to compare.</p>";
-    return;
-  }
 
   output.innerHTML = buildComparisonHtml(athleteA, athleteB);
 }

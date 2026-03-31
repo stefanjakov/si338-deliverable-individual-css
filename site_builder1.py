@@ -3,8 +3,8 @@ from datetime import datetime
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-ATHLETE_ID = "21938462"
-ATHLETE_NAME = "Gordon Ramsay"
+ATHLETE_ID = "21840731"
+ATHLETE_NAME = "Ryan Reynolds"
 ATHLETE_URL = f"https://www.athletic.net/athlete/{ATHLETE_ID}/cross-country/"
 ATHLETE_PROFILE_PIC = f"../../images/athletes/{ATHLETE_ID}/profile.jpg"
 PERFORMANCE_GRAPH = f"../../images/athletes/{ATHLETE_ID}/performance.png"
@@ -276,7 +276,7 @@ def main():
     template_path = base / "player-template.html"
     athlete_out_dir = base / "athletes" / ATHLETE_ID
     out_path = athlete_out_dir / "index.html"
-    csv_path = athlete_out_dir / "gordon.csv"
+    csv_path = athlete_out_dir / "mark.csv"
 
     records = read_csv_after_header(csv_path)
 
