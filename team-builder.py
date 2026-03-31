@@ -1,5 +1,6 @@
 from pathlib import Path
 import csv
+import json
 from datetime import datetime
 from collections import defaultdict
 
@@ -514,6 +515,14 @@ def main():
 
     a_default, _ = choose_default_comparison(athletes)
     default_id = a_default["id"] if a_default else None
+
+    data_dir = BASE_DIR / "data"
+    data_dir.mkdir(exist_ok=True)
+    data_path = data_dir / "athletes.json"
+    data_path.write_text(
+        json.dumps(athletes, indent=2),
+        encoding="utf-8"
+    )
 
     athlete_options_html = build_athlete_options(
         athletes,
