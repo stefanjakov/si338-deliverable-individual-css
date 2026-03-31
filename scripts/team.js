@@ -1,6 +1,7 @@
 let athletesData = null;
 
-function timeToSeconds(value) {
+
+const timeToSeconds = (value) => {
   if (!value || value === "N/A") {
     // just return biggest num
     return Number.POSITIVE_INFINITY;
@@ -22,7 +23,7 @@ function timeToSeconds(value) {
   return minutes * 60 + seconds;
 }
 
-function compareValues(a, b, sortBy) {
+const compareValues = (a, b, sortBy) => {
   if (sortBy === "name") {
     return a.name.localeCompare(b.name);
   }
@@ -42,7 +43,7 @@ function compareValues(a, b, sortBy) {
   return 0;
 }
 
-function sortRoster(sortBy) {
+const sortRoster = (sortBy) => {
   const roster = document.getElementById("athlete-roster");
   if (!roster) {
     return;
@@ -72,7 +73,7 @@ function sortRoster(sortBy) {
   roster.appendChild(fragment);
 }
 
-async function loadAthleteData() {
+const loadAthleteData = async () => {
   try {
     const response = await fetch("data/athletes.json");
     if (!response.ok) {
@@ -84,7 +85,7 @@ async function loadAthleteData() {
   }
 }
 
-function buildComparisonHtml(a, b) {
+const buildComparisonHtml = (a, b) => {
   const sharedMeets = Object.keys(a.meets || {})
     .filter((meet) => meet in (b.meets || {}))
     .sort((left, right) => left.localeCompare(right));
@@ -145,7 +146,7 @@ function buildComparisonHtml(a, b) {
   `;
 }
 
-function updateComparison() {
+const updateComparison = () => {
   const output = document.getElementById("comparison-output");
   if (!output || !athletesData) {
     return;
@@ -165,9 +166,6 @@ function updateComparison() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.getElementById("sort-by");
-  if (!select) {
-    return;
-  }
 
   select.addEventListener("change", (event) => {
     sortRoster(event.target.value);
