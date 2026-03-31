@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{NAME}}</title>
+  <link rel="stylesheet" href="../../dist/css/lightbox.css">
   <link rel="stylesheet" href="../../styles/style.css">
   <!-- <link rel="stylesheet" href="../../styles/reset.css"> -->
 </head>
@@ -111,7 +112,10 @@
 
       <div class="collapsible-content">
         <article class="gallery-grid">
-          <h3>Athlete Gallery Images</h3>
+          <div class="gallery-header">
+            <h3>Athlete Gallery Images</h3>
+            <p class="gallery-hint">Scroll →</p>
+          </div>
           <div class="gallery" tabindex="0" role="region" aria-label="Athlete gallery">
             {{ATHLETE_GALLERY_IMAGES}}
           </div>
@@ -137,6 +141,8 @@
       </p>
     </div>
   </footer>
+
+  <script src="../../dist/js/lightbox-plus-jquery.js"></script>
 
 </body>
 

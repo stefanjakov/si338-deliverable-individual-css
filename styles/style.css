@@ -678,6 +678,19 @@ footer p a {
 	scroll-snap-type: x mandatory;
 }
 
+.gallery-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+}
+
+.gallery-hint {
+	margin: 0;
+	font-size: var(--font-size-100);
+	color: var(--brand-secondary);
+}
+
 .gallery-card {
 	flex: 0 0 auto;
 	width: clamp(260px, 60vw, 420px);
@@ -690,6 +703,14 @@ footer p a {
 	justify-content: center;
 	padding: 0.75rem;
 	scroll-snap-align: start;
+}
+
+.gallery-card a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
 }
 
 .gallery-card img {
@@ -706,6 +727,18 @@ footer p a {
 /* ------------- */
 
 @media (min-width: 900px) {
+	main,
+	#main-nav .nav-container,
+	#athlete-nav .nav-container,
+	#site-footer .footer-content,
+	#athlete-header {
+		max-width: 1200px;
+	}
+
+	main {
+		padding: 0 0.5rem;
+	}
+
 	table thead {
 		display: table-header-group;
 	}

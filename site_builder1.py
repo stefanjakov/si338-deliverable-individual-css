@@ -35,7 +35,12 @@ def build_gallery_images(athlete_id: str, base_dir: Path) -> str:
 
         image_tags.append(
             "<div class=\"gallery-card\">"
+            f"<a href=\"{src}\" target=\"_blank\" "
+            "data-lightbox=\"athlete-gallery\" "
+            f"data-title=\"Race gallery photo: {label}\" "
+            f"data-alt=\"Race gallery photo: {label}\">"
             f"<img src=\"{src}\" alt=\"Race gallery photo: {label}\" loading=\"lazy\" />"
+            "</a>"
             "</div>"
         )
 
